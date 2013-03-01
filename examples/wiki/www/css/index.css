@@ -1,0 +1,169 @@
+/*
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+
+ /* iPad [portrait + landscape] */
+ @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        font-size: 180%;
+    }
+ }
+
+ /* iPhone [portrait + landscape] */
+/* @media only screen and (max-device-width: 480px) {
+    body {
+        font-size: 100%;
+    }
+ }*/
+
+body {
+    font-family: sans-serif;
+    margin:0; padding: 0;
+}
+
+/* Landscape layout (with min-width) */
+/*@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {}*/
+
+input[type=text], input[type=password] {
+    font-size: 100%;
+}
+
+textarea {
+    display: block;
+   font-family: inherit;
+   font-size: inherit;
+   width:100%;
+   padding:14px;
+   margin:0 -14px;
+}
+
+h2 {
+    margin: 0;
+}
+
+/*header {
+    padding:8px;
+    margin:-6px -6px 0 -6px;
+    background:#dbddbd;
+}*/
+
+.clear {
+    clear:both;
+}
+
+#sidebar {
+    float:left;
+    width: 30%;
+    /*height: 1000px;*/
+    background-image: linear-gradient(        right bottom, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
+    background-image: -moz-linear-gradient(   right bottom, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient(right bottom, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
+}
+
+#content header.grey, #sidebar header {
+    margin:0;
+    padding:4px;
+    background-image: linear-gradient(        left top, rgb(238,238,238) 40%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
+    background-image: -moz-linear-gradient(   left top, rgb(238,238,238) 40%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient(left top, rgb(238,238,238) 40%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
+}
+
+
+#sidebar ul {
+    font-size: 75%;
+    list-style: none;
+    padding-left:0px;
+}
+
+#sidebar li {
+    padding: 4px;
+    margin: 4px;
+    background-image: linear-gradient(        left top, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
+    background-image: -webkit-linear-gradient(left top, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
+}
+
+#content {
+    float:right;
+    width: 70%
+}
+
+#content .details {
+    /*margin-top: 4em;*/
+    font-size: 50%
+}
+
+input.save {
+    float: right;
+    margin:8px;
+    margin-right: 14px;
+
+}
+
+header .new {
+    margin:8px;
+    float:right;
+}
+
+#content article {
+    padding: 1em 32px;
+}
+
+#content header {
+    margin:0;
+    padding:4px;
+    background: #fff;
+}
+
+.help {
+    float:right;
+    font-size: 75%
+}
+
+form.wiki {
+    border:#ddd solid 1px;
+    background:#EEE;
+    margin: 1em 32px;
+    padding: 8px;
+}
+
+#content form.wiki .details {
+    margin-top: 0;
+}
+
+/*.edit {
+    padding: 16px;
+    margin: 16px;
+    background:#ffffef;
+    border: 1px solid #ee8;
+}
+.edit textarea {
+    margin-top: 16px
+}
+
+.edit input[type=submit] {
+    float:right;
+    margin:16px 32px;
+}
+*/
+label {
+    float:left;
+    display: block;
+    width:6em;
+    margin-right: 4px;
+    text-align: right;
+}
+
+/*
+.edit
+
+form.edit input[type=text] {
+    margin-top:4px;
+}
+*/
+label {
+    font-weight: lighter;
+    color:#888;
+}
+

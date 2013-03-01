@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!--
+    http://www.apache.org/licenses/LICENSE-2.0
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Threads</title>
+    </head>
+    <body>
+        <nav id="sidebar">
+        </nav>
+        <section id="content">
+        </section>
+        <script type="text/javascript" src="cordova-2.2.0.js"></script>
+        <script type="text/javascript" src="js/zepto.min.js"></script>
+        <script type="text/javascript" src="js/output.js"></script>
+        <!-- mustache templates -->
+        <script type="text/mustache" id="threadsSidebar-mu">
+            <header>
+                <span>Threads</span>
+                <input class="new" type="submit" value="New"/>
+                <div class="clear"/>
+            </header>
+            <ul>
+            {{#rows}}
+                <li><a href="#{{path}}">{{value}}</a>
+{{#active}}
+    <label>Owner:</label><h2>{{owner_id}}</h2>
+    {{#topic}}
+    <label>Topic:</label><p>{{topic}}</p>
+    {{/topic}}
+    <label>Members:</label><h3>{{members}}</h3>
+{{/active}}
+                </li>
+            {{/rows}}
+            </ul>
+        </script>
+        <script type="text/mustache" id="login-mu">
+            <h2>Login or Signup</h2>
+            <br/>
+            <form>
+            <label>Username:</label>
+                <input autocorrect="off" autocapitalize="off" type="text" placeholder="username"></input>
+                <br/>
+            <label>Password:</label>
+                <input type="password"></input>
+                <br/>
+                <input type="submit" value="Login / Signup"></input>
+            </form>
+            <p>You only need to enter this once. If you choose a username
+            that is not on the server yet, you get a new account. If you choose a name you chose on another device, you have to get the password right.</p>
+        </script>
+        <script type="text/mustache" id="index-mu">
+        <header>
+            <h2>
+               Welcome to Threads, {{user}}.
+            </h2>
+        </header>
+        <ul>
+            <a href="#/threads/new">Invite a friend to chat.</a>
+        </ul>
+        </script>
+        <script type="text/mustache" id="newThread-mu">
+        <header>
+            <h2>
+               {{user}}, invite friends to chat
+            </h2>
+        </header>
+        <article>
+            <form><label>Members</label>
+            <input size="60" type="text" name="members" placeholder="@jchris @amysue"></input>
+            <br/>
+            <label>Invite</label>
+            <input type="submit" value="Send"></input>
+            </form>
+        </article>
+        </script>
+        <script type="text/mustache" id="listMessages-mu">
+        <ul data-thread_id="{{thread_id}}">
+        {{#rows}}
+            <li>
+            {{#value}}
+                {{author}}:
+                {{text}}
+                {{^text}}
+                ...
+                {{/text}}
+                {{#photo}}
+                    <br/>
+                    <img src="{{path}}" height="200px"/>
+                {{/photo}}
+            {{/value}}
+            </li>
+        {{/rows}}
+        </ul>
+        </script>
+        <script type="text/mustache" id="threadMode-mu">
+        <article>
+            <header>
+                <form class="message">
+                    <input type="text" name="text" placeholder="your message here"></input>
+                    <a href="#" class="photo">Photo</a>
+                    <input type="hidden" name="_rev"></input>
+                    <input type="hidden" name="_id"></input>
+                </form>
+            </header>
+            <section class="thread">
+            </section>
+        </article>
+        </script>
+    </body>
+</html>

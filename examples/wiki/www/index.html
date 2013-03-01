@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+    http://www.apache.org/licenses/LICENSE-2.0
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Wiki Notes</title>
+    </head>
+    <body>
+        <nav id="sidebar">
+        </nav>
+        <section id="content">
+        </section>
+        <script type="text/javascript" src="cordova-2.2.0.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/coux.js"></script>
+        <script type="text/javascript" src="js/pathbinder.js"></script>
+        <script type="text/javascript" src="js/showdown.min.js"></script>
+        <script type="text/javascript" src="js/output.js"></script>
+        <!-- mustache templates -->
+        <script type="text/mustache" id="sidebar-mu">
+            <header>
+                <span>Wiki Notes</span>
+                <input class="new" type="submit" value="New"/>
+                <div class="clear"/>
+            </header>
+            <ul>
+            {{#rows}}
+                <li><a href="{{path}}">{{value}}</a></li>
+            {{/rows}}
+            </ul>
+        </script>
+        <script type="text/mustache" id="login-mu">
+            <h2>Login or Signup</h2>
+            <br/>
+            <form>
+            <label>Username:</label>
+                <input type="text" placeholder="username"></input>
+                <br/>
+            <label>Password:</label>
+                <input type="password"></input>
+                <br/>
+                <input type="submit" value="Login / Signup"></input>
+            </form>
+            <p>You only need to enter this once. If you choose a username
+            that is not on the server yet, you get a new account. If you choose a name you chose on another device, you have to get the password right.</p>
+        </script>
+        <script type="text/mustache" id="wiki-mu">
+            <header>
+                <input class="save" type="submit" value="Edit"/>
+                <h2>
+                    {{#wiki_id}}
+                        {{title}}
+                    {{/wiki_id}}
+                    {{#page_id}}
+                    > {{page_id}}
+                    {{/page_id}}
+                </h2>
+            </header>
+            <div class="details">
+                <label for="tags">Tags:</label>
+                <span name="tags">{{tags}}</span>
+                <br/>
+                <label for="members">Members:</label>
+                <span name="members">{{members}}</span>
+            </div>
+            <article>{{{body}}}</article>
+        </script>
+        <script type="text/mustache" id="edit-wiki-mu">
+            <header class="grey">
+            <input class="save" type="submit" value="Save"/>
+                <h2>
+                    <input type="text" name="title" value="{{title}}"/>
+                </h2>
+            </header>
+            <form class="wiki">
+                <div class="details">
+                    <label for="tags">Tags:</label>
+                    <input size="50" name="tags" type="text" value="{{tags}}">
+                    <br/>
+                    <label for="members">Members:</label>
+                    <input size="50" name="members" type="text" value="{{members}}">
+                </div>
+                <textarea placeholder="Link to create new pages using WikiWords or [[double brackets]]." rows=20 cols=50>{{markdown}}</textarea>
+            </form>
+        </script>
+        <script type="text/mustache" id="edit-page-mu">
+            <header class="grey">
+            <input class="save" type="submit" value="Save"/>
+            <h2>
+                {{title}} > {{page_id}}
+            </h2>
+            </header>
+            <form class="wiki">
+                <textarea placeholder="Link to create new pages using WikiWords or [[double brackets]]." rows=20 cols=50>{{markdown}}</textarea>
+            </form>
+        </script>
+    </body>
+</html>
