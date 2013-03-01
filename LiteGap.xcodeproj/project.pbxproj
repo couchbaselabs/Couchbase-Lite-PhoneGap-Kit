@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -49,8 +48,14 @@
 		79D0FCFE16E1496100B4FD71 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCFB16E1496100B4FD71 /* CouchbaseLite.framework */; };
 		79D0FCFF16E1496200B4FD71 /* CouchbaseLiteListener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCFC16E1496100B4FD71 /* CouchbaseLiteListener.framework */; };
 		79D0FD0016E1496200B4FD71 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCFD16E1496100B4FD71 /* JavaScriptCore.framework */; };
+		79D0FD0516E14CE300B4FD71 /* CBLJSFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D0FD0216E14CE300B4FD71 /* CBLJSFunction.m */; };
+		79D0FD0616E14CE300B4FD71 /* CBLJSViewCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D0FD0416E14CE300B4FD71 /* CBLJSViewCompiler.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
+		3D779C5EF970433494096FF3 /* ChildBrowserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF59C51BDEC480C8460A418 /* ChildBrowserCommand.m */; };
+		0ED659483A8446E19B56C828 /* ChildBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222AF8DA92384733BA760093 /* ChildBrowserViewController.m */; };
+		F530FB65108A4139A710165E /* ChildBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */; };
+		07278E69B7A34CE18222F868 /* ChildBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,9 +122,19 @@
 		79D0FCFB16E1496100B4FD71 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLite.framework; path = Frameworks/CouchbaseLite.framework; sourceTree = "<group>"; };
 		79D0FCFC16E1496100B4FD71 /* CouchbaseLiteListener.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLiteListener.framework; path = Frameworks/CouchbaseLiteListener.framework; sourceTree = "<group>"; };
 		79D0FCFD16E1496100B4FD71 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Frameworks/JavaScriptCore.framework; sourceTree = "<group>"; };
+		79D0FD0116E14CE300B4FD71 /* CBLJSFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLJSFunction.h; sourceTree = "<group>"; };
+		79D0FD0216E14CE300B4FD71 /* CBLJSFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLJSFunction.m; sourceTree = "<group>"; };
+		79D0FD0316E14CE300B4FD71 /* CBLJSViewCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLJSViewCompiler.h; sourceTree = "<group>"; };
+		79D0FD0416E14CE300B4FD71 /* CBLJSViewCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLJSViewCompiler.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LiteGap-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LiteGap-Info.plist"; path = "../LiteGap-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = LiteGap/config.xml; sourceTree = "<group>"; };
+		BBF59C51BDEC480C8460A418 /* ChildBrowserCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ChildBrowserCommand.m"; path = "ChildBrowserCommand.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		222AF8DA92384733BA760093 /* ChildBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ChildBrowserViewController.m"; path = "ChildBrowserViewController.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		BEB578F6AEB04B2F8A64D884 /* ChildBrowserCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ChildBrowserCommand.h"; path = "ChildBrowserCommand.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		5FA00859E5CE452B98E19256 /* ChildBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ChildBrowserViewController.h"; path = "ChildBrowserViewController.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "ChildBrowser.bundle"; path = "ChildBrowser.bundle"; sourceTree = "<group>"; };
+		B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "ChildBrowserViewController.xib"; path = "ChildBrowserViewController.xib"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +179,10 @@
 				302D95F014D2391D003F00A1 /* MainViewController.xib */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
+				79D0FD0116E14CE300B4FD71 /* CBLJSFunction.h */,
+				79D0FD0216E14CE300B4FD71 /* CBLJSFunction.m */,
+				79D0FD0316E14CE300B4FD71 /* CBLJSViewCompiler.h */,
+				79D0FD0416E14CE300B4FD71 /* CBLJSViewCompiler.m */,
 			);
 			name = Classes;
 			path = LiteGap/Classes;
@@ -235,6 +254,8 @@
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* LiteGap-Info.plist */,
+				9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */,
+				B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */,
 			);
 			name = Resources;
 			path = LiteGap/Resources;
@@ -275,6 +296,10 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				BBF59C51BDEC480C8460A418 /* ChildBrowserCommand.m */,
+				222AF8DA92384733BA760093 /* ChildBrowserViewController.m */,
+				BEB578F6AEB04B2F8A64D884 /* ChildBrowserCommand.h */,
+				5FA00859E5CE452B98E19256 /* ChildBrowserViewController.h */,
 			);
 			name = Plugins;
 			path = LiteGap/Plugins;
@@ -348,7 +373,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 430;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "LiteGap" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -412,6 +437,8 @@
 				3088BBC1154F3926009F9C59 /* Default@2x~iphone.png in Resources */,
 				3088BBC2154F3926009F9C59 /* Default~iphone.png in Resources */,
 				D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */,
+				F530FB65108A4139A710165E /* ChildBrowser.bundle in Resources */,
+				07278E69B7A34CE18222F868 /* ChildBrowserViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +469,10 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
+				79D0FD0516E14CE300B4FD71 /* CBLJSFunction.m in Sources */,
+				79D0FD0616E14CE300B4FD71 /* CBLJSViewCompiler.m in Sources */,
+				3D779C5EF970433494096FF3 /* ChildBrowserCommand.m in Sources */,
+				0ED659483A8446E19B56C828 /* ChildBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
