@@ -27,8 +27,10 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "CBLJSViewCompiler.h"
 
 #import <Cordova/CDVPlugin.h>
+#import <CouchbaseLite/CouchbaseLite.h>
 
 @implementation AppDelegate
 
@@ -47,6 +49,11 @@
     return self;
 }
 
+- (void) failed:(NSObject*) error
+{
+    NSLog(@"Container error = %@", error);
+}
+
 #pragma mark UIApplicationDelegate implementation
 
 /**
@@ -54,6 +61,25 @@
  */
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    
+    /* Couchbase Lite initialization */
+    
+    NSLog(@"Opening database...");
+    
+    NSError* error;
+    // Open the database, creating it on the first run:
+    CBLManager* dbmgr = [CBLManager sharedInstance];
+    CBLDatabase* database = [dbmgr createDatabaseNamed: @"mydb" error: &error];
+    
+    if (!database)
+        [self failed: error];
+    
+    [CBLView setCompiler: [[CBLJSViewCompiler alloc] init]];
+    
+    NSURL* dburl = database.internalURL;
+    
+    NSLog(@"Couchbase Lite url = %@", dburl);
+    
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
 
     self.window = [[[UIWindow alloc] initWithFrame:screenBounds] autorelease];
