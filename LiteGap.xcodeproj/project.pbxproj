@@ -1,22 +1,4 @@
 // !$*UTF8*$!
-/*
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
-*/
 {
 	archiveVersion = 1;
 	classes = {
@@ -64,6 +46,9 @@
 		79D0FCEF16E1478E00B4FD71 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCEE16E1478E00B4FD71 /* libz.dylib */; };
 		79D0FCF116E1479900B4FD71 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCF016E1479900B4FD71 /* libsqlite3.dylib */; };
 		79D0FCF316E147A100B4FD71 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCF216E147A100B4FD71 /* Security.framework */; };
+		79D0FCFE16E1496100B4FD71 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCFB16E1496100B4FD71 /* CouchbaseLite.framework */; };
+		79D0FCFF16E1496200B4FD71 /* CouchbaseLiteListener.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCFC16E1496100B4FD71 /* CouchbaseLiteListener.framework */; };
+		79D0FD0016E1496200B4FD71 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCFD16E1496100B4FD71 /* JavaScriptCore.framework */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
 /* End PBXBuildFile section */
@@ -129,6 +114,9 @@
 		79D0FCEE16E1478E00B4FD71 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		79D0FCF016E1479900B4FD71 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		79D0FCF216E147A100B4FD71 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		79D0FCFB16E1496100B4FD71 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLite.framework; path = Frameworks/CouchbaseLite.framework; sourceTree = "<group>"; };
+		79D0FCFC16E1496100B4FD71 /* CouchbaseLiteListener.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLiteListener.framework; path = Frameworks/CouchbaseLiteListener.framework; sourceTree = "<group>"; };
+		79D0FCFD16E1496100B4FD71 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Frameworks/JavaScriptCore.framework; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LiteGap-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LiteGap-Info.plist"; path = "../LiteGap-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = LiteGap/config.xml; sourceTree = "<group>"; };
@@ -159,6 +147,9 @@
 				301BF5C5109A6A2B0062928A /* SystemConfiguration.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */,
+				79D0FCFE16E1496100B4FD71 /* CouchbaseLite.framework in Frameworks */,
+				79D0FCFF16E1496200B4FD71 /* CouchbaseLiteListener.framework in Frameworks */,
+				79D0FD0016E1496200B4FD71 /* JavaScriptCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +243,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79D0FCFB16E1496100B4FD71 /* CouchbaseLite.framework */,
+				79D0FCFC16E1496100B4FD71 /* CouchbaseLiteListener.framework */,
+				79D0FCFD16E1496100B4FD71 /* JavaScriptCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
@@ -504,6 +498,10 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -524,6 +522,10 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_OBJCPP_ARC_ABI = YES;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LiteGap/LiteGap-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
