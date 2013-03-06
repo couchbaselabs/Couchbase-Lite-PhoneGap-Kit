@@ -56,6 +56,10 @@
 		0ED659483A8446E19B56C828 /* ChildBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222AF8DA92384733BA760093 /* ChildBrowserViewController.m */; };
 		F530FB65108A4139A710165E /* ChildBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */; };
 		07278E69B7A34CE18222F868 /* ChildBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */; };
+		99B429E16549450AA790595F /* CBCordovaBrowserId.m in Sources */ = {isa = PBXBuildFile; fileRef = 877C83B39D874714A11F5CC3 /* CBCordovaBrowserId.m */; };
+		F9E1A2957E38435FBB2535A2 /* BrowserIDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660DDD9D951040BAAECDD2B7 /* BrowserIDController.m */; };
+		3729BBB8BEE24C5D9FE65140 /* BrowserIDController+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB03FFC21B420FA0B8D8EA /* BrowserIDController+UIKit.m */; };
+		393DD4E8E633433C8314B125 /* BrowserIDController.js in Resources */ = {isa = PBXBuildFile; fileRef = EE20E119FDB54BCC9606664A /* BrowserIDController.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +139,13 @@
 		5FA00859E5CE452B98E19256 /* ChildBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ChildBrowserViewController.h"; path = "ChildBrowserViewController.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "ChildBrowser.bundle"; path = "ChildBrowser.bundle"; sourceTree = "<group>"; };
 		B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "ChildBrowserViewController.xib"; path = "ChildBrowserViewController.xib"; sourceTree = "<group>"; fileEncoding = 4; };
+		877C83B39D874714A11F5CC3 /* CBCordovaBrowserId.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CBCordovaBrowserId.m"; path = "CBCordovaBrowserId.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		660DDD9D951040BAAECDD2B7 /* BrowserIDController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BrowserIDController.m"; path = "BrowserIDController.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		7ACB03FFC21B420FA0B8D8EA /* BrowserIDController+UIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BrowserIDController+UIKit.m"; path = "BrowserIDController+UIKit.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		A8248E3B69794588BBFAC83C /* CBCordovaBrowserId.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CBCordovaBrowserId.h"; path = "CBCordovaBrowserId.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		9443A3C73910444B970780D6 /* BrowserIDController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BrowserIDController.h"; path = "BrowserIDController.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		16DAA06AFE9D4B7BB572C849 /* BrowserIDController+UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BrowserIDController+UIKit.h"; path = "BrowserIDController+UIKit.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		EE20E119FDB54BCC9606664A /* BrowserIDController.js */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "BrowserIDController.js"; path = "BrowserIDController.js"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +267,7 @@
 				8D1107310486CEB800E47090 /* LiteGap-Info.plist */,
 				9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */,
 				B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */,
+				EE20E119FDB54BCC9606664A /* BrowserIDController.js */,
 			);
 			name = Resources;
 			path = LiteGap/Resources;
@@ -300,6 +312,12 @@
 				222AF8DA92384733BA760093 /* ChildBrowserViewController.m */,
 				BEB578F6AEB04B2F8A64D884 /* ChildBrowserCommand.h */,
 				5FA00859E5CE452B98E19256 /* ChildBrowserViewController.h */,
+				877C83B39D874714A11F5CC3 /* CBCordovaBrowserId.m */,
+				660DDD9D951040BAAECDD2B7 /* BrowserIDController.m */,
+				7ACB03FFC21B420FA0B8D8EA /* BrowserIDController+UIKit.m */,
+				A8248E3B69794588BBFAC83C /* CBCordovaBrowserId.h */,
+				9443A3C73910444B970780D6 /* BrowserIDController.h */,
+				16DAA06AFE9D4B7BB572C849 /* BrowserIDController+UIKit.h */,
 			);
 			name = Plugins;
 			path = LiteGap/Plugins;
@@ -439,6 +457,7 @@
 				D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */,
 				F530FB65108A4139A710165E /* ChildBrowser.bundle in Resources */,
 				07278E69B7A34CE18222F868 /* ChildBrowserViewController.xib in Resources */,
+				393DD4E8E633433C8314B125 /* BrowserIDController.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +492,9 @@
 				79D0FD0616E14CE300B4FD71 /* CBLJSViewCompiler.m in Sources */,
 				3D779C5EF970433494096FF3 /* ChildBrowserCommand.m in Sources */,
 				0ED659483A8446E19B56C828 /* ChildBrowserViewController.m in Sources */,
+				99B429E16549450AA790595F /* CBCordovaBrowserId.m in Sources */,
+				F9E1A2957E38435FBB2535A2 /* BrowserIDController.m in Sources */,
+				3729BBB8BEE24C5D9FE65140 /* BrowserIDController+UIKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

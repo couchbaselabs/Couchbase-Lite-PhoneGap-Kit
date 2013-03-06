@@ -33,6 +33,7 @@
         <plugin name="Globalization" value="CDVGlobalization" />
         <plugin name="InAppBrowser" value="CDVInAppBrowser" />
         <plugin name="ChildBrowser" value="ChildBrowserCommand" />
+        <plugin name="CBCordovaBrowserId" value="CBCordovaBrowserId" />
     </plugins>
     <access origin="*" />
 </cordova>
