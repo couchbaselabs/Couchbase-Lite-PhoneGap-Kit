@@ -37,7 +37,10 @@ There are example apps (currently a chat app, with an HTML5 Markdown wiki on the
 
 * Remove the existing directory from `$PROJECT_ROOT/www`
 * Make a symlink so that the `$PROJECT_ROOT/examples/chat/www` directory shows up at `$PROJECT_ROOT/www/`. You can do this by running `ln -s examples/chat/www www`
+* Note that the app code needs to be bundled by Browserify before you can build. A pre-bundled version should be included in the repository, but if you touch any of the app JavaScript, your changes won't show up until you run `examples/chat/bundle.js`. For this reason, you are encouraged to add a "run Script" Build Phase to your app target, and have it run something like this: `/usr/local/bin/node ${PROJECT_DIR}/examples/chat/bundle.js` (use `which node` to find where node lives.) Xcode doesn't get access to your shell ENV, so you need to make sure this path maps properly...
 * Now you are ready to build the app and check it out on your simulator.
+
+BTW I've followed these steps and put the result into the "chat" branch.
 
 Follow the rest of these steps to enable sync between multiple devices and the cloud.
 

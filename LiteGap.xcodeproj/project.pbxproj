@@ -5,7 +5,10 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
+		07278E69B7A34CE18222F868 /* ChildBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */; };
+		0ED659483A8446E19B56C828 /* ChildBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222AF8DA92384733BA760093 /* ChildBrowserViewController.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -40,6 +43,9 @@
 		30A0434814DC770100060A13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A0434314DC770100060A13 /* Localizable.strings */; };
 		30A0434914DC770100060A13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A0434614DC770100060A13 /* Localizable.strings */; };
 		30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E5649113A7FCAF007403D8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		3729BBB8BEE24C5D9FE65140 /* BrowserIDController+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB03FFC21B420FA0B8D8EA /* BrowserIDController+UIKit.m */; };
+		393DD4E8E633433C8314B125 /* BrowserIDController.js in Resources */ = {isa = PBXBuildFile; fileRef = EE20E119FDB54BCC9606664A /* BrowserIDController.js */; };
+		3D779C5EF970433494096FF3 /* ChildBrowserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF59C51BDEC480C8460A418 /* ChildBrowserCommand.m */; };
 		79D0FCEB16E1477B00B4FD71 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCEA16E1477B00B4FD71 /* libstdc++.dylib */; };
 		79D0FCED16E1478800B4FD71 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCEC16E1478800B4FD71 /* libicucore.dylib */; };
 		79D0FCEF16E1478E00B4FD71 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCEE16E1478E00B4FD71 /* libz.dylib */; };
@@ -50,16 +56,11 @@
 		79D0FD0016E1496200B4FD71 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79D0FCFD16E1496100B4FD71 /* JavaScriptCore.framework */; };
 		79D0FD0516E14CE300B4FD71 /* CBLJSFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D0FD0216E14CE300B4FD71 /* CBLJSFunction.m */; };
 		79D0FD0616E14CE300B4FD71 /* CBLJSViewCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D0FD0416E14CE300B4FD71 /* CBLJSViewCompiler.m */; };
-		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
-		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
-		3D779C5EF970433494096FF3 /* ChildBrowserCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF59C51BDEC480C8460A418 /* ChildBrowserCommand.m */; };
-		0ED659483A8446E19B56C828 /* ChildBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 222AF8DA92384733BA760093 /* ChildBrowserViewController.m */; };
-		F530FB65108A4139A710165E /* ChildBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */; };
-		07278E69B7A34CE18222F868 /* ChildBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */; };
 		99B429E16549450AA790595F /* CBCordovaBrowserId.m in Sources */ = {isa = PBXBuildFile; fileRef = 877C83B39D874714A11F5CC3 /* CBCordovaBrowserId.m */; };
+		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		F530FB65108A4139A710165E /* ChildBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */; };
+		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
 		F9E1A2957E38435FBB2535A2 /* BrowserIDController.m in Sources */ = {isa = PBXBuildFile; fileRef = 660DDD9D951040BAAECDD2B7 /* BrowserIDController.m */; };
-		3729BBB8BEE24C5D9FE65140 /* BrowserIDController+UIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACB03FFC21B420FA0B8D8EA /* BrowserIDController+UIKit.m */; };
-		393DD4E8E633433C8314B125 /* BrowserIDController.js in Resources */ = {isa = PBXBuildFile; fileRef = EE20E119FDB54BCC9606664A /* BrowserIDController.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16DAA06AFE9D4B7BB572C849 /* BrowserIDController+UIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BrowserIDController+UIKit.h"; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F766FDD13BBADB100FB74C0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		1F766FE013BBADB100FB74C0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Localizable.strings; sourceTree = "<group>"; };
+		222AF8DA92384733BA760093 /* ChildBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildBrowserViewController.m; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
@@ -118,6 +121,8 @@
 		30A0434714DC770100060A13 /* se */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = se; path = Localizable.strings; sourceTree = "<group>"; };
 		30E5649113A7FCAF007403D8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* LiteGap-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LiteGap-Prefix.pch"; sourceTree = "<group>"; };
+		5FA00859E5CE452B98E19256 /* ChildBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildBrowserViewController.h; sourceTree = "<group>"; };
+		660DDD9D951040BAAECDD2B7 /* BrowserIDController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserIDController.m; sourceTree = "<group>"; };
 		79D0FCEA16E1477B00B4FD71 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		79D0FCEC16E1478800B4FD71 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		79D0FCEE16E1478E00B4FD71 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -130,22 +135,18 @@
 		79D0FD0216E14CE300B4FD71 /* CBLJSFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLJSFunction.m; sourceTree = "<group>"; };
 		79D0FD0316E14CE300B4FD71 /* CBLJSViewCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLJSViewCompiler.h; sourceTree = "<group>"; };
 		79D0FD0416E14CE300B4FD71 /* CBLJSViewCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLJSViewCompiler.m; sourceTree = "<group>"; };
+		7ACB03FFC21B420FA0B8D8EA /* BrowserIDController+UIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BrowserIDController+UIKit.m"; sourceTree = "<group>"; };
+		877C83B39D874714A11F5CC3 /* CBCordovaBrowserId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBCordovaBrowserId.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* LiteGap-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "LiteGap-Info.plist"; path = "../LiteGap-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		9443A3C73910444B970780D6 /* BrowserIDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserIDController.h; sourceTree = "<group>"; };
+		9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChildBrowser.bundle; sourceTree = "<group>"; };
+		A8248E3B69794588BBFAC83C /* CBCordovaBrowserId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBCordovaBrowserId.h; sourceTree = "<group>"; };
+		B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildBrowserViewController.xib; sourceTree = "<group>"; };
+		BBF59C51BDEC480C8460A418 /* ChildBrowserCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildBrowserCommand.m; sourceTree = "<group>"; };
+		BEB578F6AEB04B2F8A64D884 /* ChildBrowserCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildBrowserCommand.h; sourceTree = "<group>"; };
 		D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
+		EE20E119FDB54BCC9606664A /* BrowserIDController.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = unknown; path = BrowserIDController.js; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = LiteGap/config.xml; sourceTree = "<group>"; };
-		BBF59C51BDEC480C8460A418 /* ChildBrowserCommand.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ChildBrowserCommand.m"; path = "ChildBrowserCommand.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		222AF8DA92384733BA760093 /* ChildBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ChildBrowserViewController.m"; path = "ChildBrowserViewController.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		BEB578F6AEB04B2F8A64D884 /* ChildBrowserCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ChildBrowserCommand.h"; path = "ChildBrowserCommand.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		5FA00859E5CE452B98E19256 /* ChildBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ChildBrowserViewController.h"; path = "ChildBrowserViewController.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		9672D10D4AEB4BBD91220073 /* ChildBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "ChildBrowser.bundle"; path = "ChildBrowser.bundle"; sourceTree = "<group>"; };
-		B0E5537FEDB8413D940506D3 /* ChildBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "ChildBrowserViewController.xib"; path = "ChildBrowserViewController.xib"; sourceTree = "<group>"; fileEncoding = 4; };
-		877C83B39D874714A11F5CC3 /* CBCordovaBrowserId.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CBCordovaBrowserId.m"; path = "CBCordovaBrowserId.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		660DDD9D951040BAAECDD2B7 /* BrowserIDController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BrowserIDController.m"; path = "BrowserIDController.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		7ACB03FFC21B420FA0B8D8EA /* BrowserIDController+UIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "BrowserIDController+UIKit.m"; path = "BrowserIDController+UIKit.m"; sourceTree = "<group>"; fileEncoding = 4; };
-		A8248E3B69794588BBFAC83C /* CBCordovaBrowserId.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CBCordovaBrowserId.h"; path = "CBCordovaBrowserId.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		9443A3C73910444B970780D6 /* BrowserIDController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BrowserIDController.h"; path = "BrowserIDController.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		16DAA06AFE9D4B7BB572C849 /* BrowserIDController+UIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BrowserIDController+UIKit.h"; path = "BrowserIDController+UIKit.h"; sourceTree = "<group>"; fileEncoding = 4; };
-		EE20E119FDB54BCC9606664A /* BrowserIDController.js */ = {isa = PBXFileReference; lastKnownFileType = unknown; name = "BrowserIDController.js"; path = "BrowserIDController.js"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +371,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "LiteGap" */;
 			buildPhases = (
+				79D0FD2F16E8049A00B4FD71 /* Update app JavaScript bundle */,
 				304B58A110DAC018002A0835 /* Touch www folder */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -477,6 +479,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "touch -cm ${PROJECT_DIR}/www";
+		};
+		79D0FD2F16E8049A00B4FD71 /* Update app JavaScript bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update app JavaScript bundle";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/node ${PROJECT_DIR}/examples/chat/bundle.js";
 		};
 /* End PBXShellScriptBuildPhase section */
 
