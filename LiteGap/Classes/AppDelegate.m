@@ -74,7 +74,7 @@
     if (!database)
         [self failed: error];
     
-    [CBLView setCompiler: [[CBLJSViewCompiler alloc] init]];
+    [CBLView setCompiler: [[[CBLJSViewCompiler alloc] init] autorelease]];
     
     NSURL* dburl = database.internalURL;
     
