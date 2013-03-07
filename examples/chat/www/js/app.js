@@ -29,25 +29,6 @@ $(function() {
       "/thread/:id" : thread.index
     };
 
-  function initSyncOrLogin (cb) {
-    console.log("initSyncOrLogin")
-    auth.getUser(function(no, user) {
-      if (no) {
-        location.hash="/login";
-      } else {
-        var resync = sync.trigger(user, function(err, ok) {
-          if (err && err.error !== "exists") {
-            console.log("sync err: " + JSON.stringify(err));
-          } else {
-            // ok
-            console.log("init ok")
-            cb(false, resync);
-          }
-        });
-      }
-    });
-  }
-
   var changesSetup = false;
   function setupChanges(changesHandler) {
     if (changesSetup) return;
@@ -71,8 +52,8 @@ $(function() {
     contentRouter.init();
     var sidebarRouter = router(sidebarRoutes, sidebar);
     sidebarRouter.init("/threads");
-    // touchlink(sidebar);
-    initSyncOrLogin(function(err, resync){
+
+    sync.trigger(function(err, resync){
       if (err) {
         console.log("login err", err);
         return;

@@ -3,15 +3,10 @@ var config = module.exports = {
     dbHost : 'http://lite.couchbase.'
   },
   mu = require("mustache"),
-  coax = require("coax"),
-  SYNC_HOST = "animal.local";
+  coax = require("coax");
 
-config.channelServer = 'http://'+SYNC_HOST+':3000/signup/';
-config.syncTarget = SYNC_HOST+':4984/sync_gateway';
-
-if (location.protocol != "file:") {
-  config.dbHost = location.origin;
-}
+// todo make configurable in-app
+config.syncTarget = 'http://animal.local:4984/sync_gateway';
 
 config.dbUrl = config.dbHost + '/' + config.dbName;
 
@@ -50,5 +45,4 @@ var ddoc = {
 config.setup = function(done) {
   // install the views
   config.db.forceSave(ddoc, done);
-  // done();
 }
