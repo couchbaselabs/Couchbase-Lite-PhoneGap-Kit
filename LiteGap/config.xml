@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <cordova>
+    <log level="INFO"/>
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="SuppressesIncrementalRendering" value="false" />
     <preference name="UIWebViewBounce" value="true" />

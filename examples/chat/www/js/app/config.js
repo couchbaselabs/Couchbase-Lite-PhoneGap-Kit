@@ -6,11 +6,13 @@ var config = module.exports = {
   coax = require("coax");
 
 // todo make configurable in-app
+config.syncOrigin = 'http://animal.local:4984/';
 config.syncTarget = 'http://animal.local:4984/sync_gateway';
 
 config.dbUrl = config.dbHost + '/' + config.dbName;
 
 config.db = coax(config.dbUrl);
+config.dbServer = coax(config.dbHost);
 
 $('script[type="text/mustache"]').each(function() {
     var id = this.id.split('-');

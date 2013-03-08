@@ -53,26 +53,33 @@ $(function() {
     var sidebarRouter = router(sidebarRoutes, sidebar);
     sidebarRouter.init("/threads");
 
-    sync.trigger(function(err, resync){
+    sync.trigger(function(err, user){
       if (err) {
-        console.log("login err", err);
+        console.log(["login err", err]);
         return;
       }
-      setupChanges(function(doc){
-        // console.log(["change",location.hash, doc]);
-        var currentThread = location.hash.split('/').pop();
-        if (doc.type == "message" && doc.thread_id == currentThread) {
-          // redraw the chat
-          // console.log("chat redraw", currentThread)
-          contentRouter.go(location.hash);
-        } else if (doc.type == "thread") {
-          // redraw the sidebar
-          var route = /threads/.test(location.hash) ? location.hash : "/threads";
-          sidebarRouter.go(route);
-          // get new channels from sync server
-          resync();
-        }
-      });
+      if (user && user.email) {
+        console.log("we are "+user.email);
+        config.db.put("profile:"+user.email, {type : "profile"}, function() {
+
+        })
+      }
+
+      // setupChanges(function(doc){
+      //   // console.log(["change",location.hash, doc]);
+      //   var currentThread = location.hash.split('/').pop();
+      //   if (doc.type == "message" && doc.thread_id == currentThread) {
+      //     // redraw the chat
+      //     // console.log("chat redraw", currentThread)
+      //     contentRouter.go(location.hash);
+      //   } else if (doc.type == "thread") {
+      //     // redraw the sidebar
+      //     var route = /threads/.test(location.hash) ? location.hash : "/threads";
+      //     sidebarRouter.go(route);
+      //     // get new channels from sync server
+      //     resync();
+      //   }
+      // });
     });
 
   }

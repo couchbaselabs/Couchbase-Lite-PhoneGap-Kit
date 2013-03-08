@@ -492,7 +492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/node ${PROJECT_DIR}/examples/chat/bundle.js";
+			shellScript = "/usr/local/bin/node ${PROJECT_DIR}/examples/chat/bundle.js\n/usr/local/bin/node ${PROJECT_DIR}/examples/chat/bundle.js";
 		};
 /* End PBXShellScriptBuildPhase section */
 
