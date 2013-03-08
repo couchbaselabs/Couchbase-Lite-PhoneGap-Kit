@@ -1,5 +1,4 @@
-var auth = require("./auth"),
-  config = require("./config"),
+var config = require("./config"),
   db = config.db,
   messagesView = db(["_design","threads","_view","messages"]),
   jsonform = require("./jsonform");

@@ -2,7 +2,6 @@ $(function() {
   var config = require('./app/config'),
     home = require("./app/home"),
     thread = require("./app/thread"),
-    auth = require('./app/auth'),
     sync = require('./app/sync'),
     // libraries
     coax = require("coax"),
@@ -15,7 +14,6 @@ $(function() {
 
   var content = $("#content")[0],
     contentRoutes = {
-      "/login" : auth.login,
       // "/reload" : home.reload,
       // "/reloaded" : home.reloaded,
       "/" : home.index,
@@ -47,12 +45,7 @@ $(function() {
 
   }
   // start the sync
-  function appInit() {
-    var contentRouter = router(contentRoutes, content);
-    contentRouter.init();
-    var sidebarRouter = router(sidebarRoutes, sidebar);
-    sidebarRouter.init("/threads");
-
+  function appInit(cb) {
     sync.trigger(function(err, user){
       if (err) {
         console.log(["login err", err]);
@@ -60,10 +53,23 @@ $(function() {
       }
       if (user && user.email) {
         console.log("we are "+user.email);
+        config.email = user.email;
         config.db.put("profile:"+user.email, {type : "profile"}, function() {
-
-        })
+          cb(false, user.email);
+        });
       }
+    });
+  }
+
+  config.setup(function(err, ok){
+    if (err) {
+      return console.log(err);
+    }
+    appInit(function(err, email) {
+      var contentRouter = router(contentRoutes, content);
+      contentRouter.init();
+      var sidebarRouter = router(sidebarRoutes, sidebar);
+      sidebarRouter.init("/threads");
 
       // setupChanges(function(doc){
       //   // console.log(["change",location.hash, doc]);
@@ -81,16 +87,5 @@ $(function() {
       //   }
       // });
     });
-
-  }
-
-  config.setup(function(err, ok){
-    if (err) {
-      return console.log(err);
-    }
-    appInit();
   });
-
-
 });
-

@@ -1,8 +1,6 @@
 var config = require("./config"),
   coax = require("coax");
 
-
-
 function refreshSync(rep, cb) {
   var cancel = JSON.parse(JSON.stringify(rep));
   cancel.cancel = true;
@@ -17,12 +15,12 @@ function refreshSync(rep, cb) {
 var pullRep = {
     source : {url : config.syncTarget},
     target : config.dbName
-    // , continuous : true
+    , continuous : true
   },
   pushRep = {
     target : {url: config.syncTarget},
     source : config.dbName
-    // , continuous : true
+    , continuous : true
   };
 
 // takes care of triggering pull and push replication to the cloud.
@@ -36,7 +34,6 @@ function triggerSync(cb, retries) {
     console.log(["pushRep", err, ok])
     // should use some setInterval with repeater until success or timeout...
     // or a sync replication API
-
     setTimeout(function(){
       config.dbServer.get("_active_tasks", function(err, tasks){
         var info = tasks[0];
@@ -50,13 +47,28 @@ function triggerSync(cb, retries) {
             config.dbServer.post("_browserid_assertion", postbody, function(err, info) {
               if (err) throw(err);
               if (info.email) {
-                config.db.forceSave({_id : "_local/user", email:info.email}, function(err, ok) {
-                  // if (err) throw(err);
-                  pullRep.source.auth = {browserid:{email:info.email}};
-                  pushRep.target.auth = {browserid:{email:info.email}};
-                  console.log(["retry with email", info.email]);
-                  triggerSync(cb, retries-1);
-                })
+                config.db.get("_local/user", function(err, user) {
+                  if (err && err.error == "not_found") {
+                    config.db.post({_id : "_local/user", email:info.email}, function(err, ok){
+                      if (err) throw(err);
+                      // happiness
+                      pullRep.source.auth = {browserid:{email:info.email}};
+                      pushRep.target.auth = {browserid:{email:info.email}};
+                      console.log(["retry with email", info.email]);
+                      triggerSync(cb, retries-1);
+                    });
+                  } else {
+                    if (user.email !== info.email) {
+                      cb("this device is already synced for "+user.email);
+                    } else {
+                      // happiness is copy/paste :)
+                      pullRep.source.auth = {browserid:{email:info.email}};
+                      pushRep.target.auth = {browserid:{email:info.email}};
+                      console.log(["retry with email", info.email]);
+                      triggerSync(cb, retries-1);
+                    }
+                  }
+                });
               }
             });
           });
@@ -66,7 +78,6 @@ function triggerSync(cb, retries) {
           refreshSync(pullRep, function(err, ok) {
             config.db("_local/user", cb);
           });
-
         }
       });
     },500)
