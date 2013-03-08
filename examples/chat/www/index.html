@@ -12,8 +12,6 @@
         <title>Threads</title>
     </head>
     <body>
-        <nav id="sidebar">
-        </nav>
         <section id="content">
         </section>
         <script type="text/javascript" src="cordova-2.4.0.js"></script>
@@ -21,34 +19,19 @@
         <script type="text/javascript" src="js/zepto.min.js"></script>
         <script type="text/javascript" src="js/output.js"></script>
         <!-- mustache templates -->
-        <script type="text/mustache" id="threadsSidebar-mu">
-            <header>
-                <span>Threads</span>
-                <input class="new" type="submit" value="New"/>
-                <div class="clear"/>
-            </header>
-            <ul>
-            {{#rows}}
-                <li><a href="#{{path}}">{{value}}</a>
-{{#active}}
-    <label>Owner:</label><h2>{{owner_id}}</h2>
-    {{#topic}}
-    <label>Topic:</label><p>{{topic}}</p>
-    {{/topic}}
-    <label>Members:</label><h3>{{members}}</h3>
-{{/active}}
-                </li>
-            {{/rows}}
-            </ul>
-        </script>
         <script type="text/mustache" id="index-mu">
         <header>
-            <h2>
-               Welcome to Threads, {{user}}.
-            </h2>
+            <h1>Threads</h1>
+            <h3>{{user}}</h3>
+            <a href="#/threads/new">New</a>
+            <input class="new" type="submit" value="New"/>
+            <div class="clear"/>
         </header>
         <ul>
-            <a href="#/threads/new">Invite a friend to chat.</a>
+        {{#rows}}
+            <li><a href="#{{path}}">{{value}}</a>
+            </li>
+        {{/rows}}
         </ul>
         </script>
         <script type="text/mustache" id="newThread-mu">

@@ -59,16 +59,10 @@ h2 {
     clear:both;
 }
 
-#sidebar {
-    float:left;
-    width: 20%;
-    /*height: 1000px;*/
-    background-image: linear-gradient(        right bottom, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
-    background-image: -moz-linear-gradient(   right bottom, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
-    background-image: -webkit-linear-gradient(right bottom, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
+#content {
 }
 
-#content header.grey, #sidebar header {
+#content header.grey {
     margin:0;
     padding:4px;
     background-image: linear-gradient(        left top, rgb(238,238,238) 40%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
@@ -83,24 +77,6 @@ h2 {
 
 .thread li {
     padding: 2px
-}
-
-#sidebar ul {
-    font-size: 75%;
-    list-style: none;
-    padding-left:0px;
-}
-
-#sidebar li {
-    padding: 4px;
-    margin: 4px;
-    background-image: linear-gradient(        left top, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
-    background-image: -webkit-linear-gradient(left top, rgb(238,238,238) 0%, rgb(250,250,250) 75%, rgb(255,255,255) 100%);
-}
-
-#content {
-    float:right;
-    width: 80%
 }
 
 #content .details {
