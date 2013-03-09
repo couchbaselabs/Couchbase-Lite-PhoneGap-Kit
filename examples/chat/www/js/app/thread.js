@@ -176,24 +176,7 @@ exports.view = function(params) {
 };
 
 function drawSidebar(elem, active) {
-  db.get(["_design","threads","_view","updated"], function(err, view) {
-    var activeOffset;
-    view.rows.forEach(function(row, i){
-      if (active && active._id == row.id) {
-        row.active = active;
-        activeOffset = i;
-      }
-      row.path = "/thread/"+row.id;
-    });
-    elem.html(config.t.threadsSidebar(view))
-    elem.find(".new").click(function(){
-      location.hash = "/threads/new";
-    });
-    elem.find('li a').click(function() {
-      elem.find('ul li').removeClass("active");
-      $(this).parents("li").addClass("active");
-    });
-  });
+
 }
 
 // sidebar

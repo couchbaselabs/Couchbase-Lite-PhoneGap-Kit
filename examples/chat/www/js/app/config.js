@@ -25,20 +25,29 @@ var ddoc = {
   views : {
     messages : {
       map : function(doc) {
-        var val = {text:doc.text, author:doc.author_id};
-        if (doc._attachments && doc._attachments['photo.jpg']) {
-          val.photo = "photo.jpg";
+        if (doc.type =="chat" && doc.channel_id) {
+          emit([doc.channel_id, doc.created_at],
+            [doc.author, doc.markdown, !!doc._attachments, doc.style == "announcement"]);
         }
-        if (doc.thread_id && doc.updated_at && doc.author_id) {
-          emit([doc.thread_id, doc.seq, doc.updated_at], val);
+      }.toString(),
+      reduce : function(ks, vs, rr) {
+        var v, d, max, count = 0, lastSender;
+        if (rr) {
+          for (var i = 0; i < vs.length; i++) {
+            v = vs[i];
+            count += v[1];
+            d = new Date(v[0]);
+            if (!max || d > max) {
+              max = d;
+              lastSender = v[2];
+            }
+          };
+        } else {
+          max = new Date(ks[ks.length-1][1]);
+          lastSender = vs[vs.length-1][0];
+          count = vs.length;
         }
-      }.toString()
-    },
-    updated : {
-      map : function(doc) {
-        if (doc.members && doc.updated_at) {
-          emit(doc.updated_at, doc.members);
-        }
+        return [max, count, lastSender];
       }.toString()
     }
   }

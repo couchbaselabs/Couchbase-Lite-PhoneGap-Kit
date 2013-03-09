@@ -29,7 +29,10 @@
         </header>
         <ul>
         {{#rows}}
-            <li><a href="#{{path}}">{{value}}</a>
+            <li>
+                <a href="#/room/{{doc._id}}">
+                Room:    {{doc.title}}
+                </a>
             </li>
         {{/rows}}
         </ul>

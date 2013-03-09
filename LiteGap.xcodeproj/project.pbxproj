@@ -371,8 +371,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "LiteGap" */;
 			buildPhases = (
-				79D0FD2F16E8049A00B4FD71 /* Update app JavaScript bundle */,
 				304B58A110DAC018002A0835 /* Touch www folder */,
+				79D0FD2F16E8049A00B4FD71 /* Update app JavaScript bundle */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
@@ -492,7 +492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/node ${PROJECT_DIR}/examples/chat/bundle.js\n/usr/local/bin/node ${PROJECT_DIR}/examples/chat/bundle.js";
+			shellScript = "/usr/local/bin/node ${PROJECT_DIR}/examples/chat/bundle.js";
 		};
 /* End PBXShellScriptBuildPhase section */
 
