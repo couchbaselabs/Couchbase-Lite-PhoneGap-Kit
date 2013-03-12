@@ -58,49 +58,11 @@ function messageFromForm(author, form) {
   return doc;
 };
 
-function makeMessageBlur(user) {
-  return function(e) {
-    e.preventDefault();
-    var form = this,
-      doc = messageFromForm(user.user, form),
-      rev = $(form).find("[name=_rev]").val(),
-      id = $(form).find("[name=_id]").val();
-    console.log("blur", id, rev, doc);
-    if (id && rev) {
-      db.del([id, {rev : rev}], function(err, ok){
-        console.log("blur cleaned")
-      });
-    }
-  }
-}
-
-function makeNewMessageBubbles(user) { // todo put author id in the dom
-  console.log("makeNewMessageBubbles make", user.user);
-return function(e) {
-  e.preventDefault();
-  var form = this, doc = messageFromForm(user.user, form);
-  console.log("NewMessageBubbles", doc, $(form).find("[name=_id]").val())
-  if (!$(form).find("[name=_id]").val()) {
-    console.log("makeNewMessageBubbles post");
-    delete doc._id;
-    delete doc._rev;
-    if (!doc.text) delete doc.text;
-    db.post(doc, function(err, ok){
-      if (err) {return console.log(err);}
-      console.log("made bubble", ok.id, ok.rev);
-      $(form).find("[name=_id]").val(ok.id);
-      $(form).find("[name=_rev]").val(ok.rev);
-    });
-  }
-
-};
-}
-
 function makeNewMessageSubmit(email) {
   return function(e) {
   e.preventDefault();
   var form = this, doc = messageFromForm(email, form);
-  // emit([doc.thread_id, doc.seq, doc.updated_at], doc.text);
+  // emit([doc.channel_id, doc.seq, doc.updated_at], doc.markdown);
   if (!doc._rev) delete doc._rev;
   if (!doc._id) delete doc._id;
 
@@ -112,7 +74,7 @@ function makeNewMessageSubmit(email) {
       return console.log(err);
     }
     var input = $(form).find("[name=text]");
-    if (input.val() == doc.text) {
+    if (input.val() == doc.markdown) {
       input.val('');
     }
     $(form).find("[name=_id]").val('');
@@ -121,22 +83,26 @@ function makeNewMessageSubmit(email) {
 }
 }
 
+function listMessages (elem, room_id) {
+  getMessagesView(room_id, function(err, view) {
+    if(err){return location.hash="/error";}
+    var rows = view.rows;
+    for (var i = 0; i < rows.length; i++) {
+      if (rows[i].value[0] == config.email) {
+        rows[i].who = "mine";
+      }
+    };
+    elem.html(config.t.listMessages(view));
+  });
+}
+
 exports.view = function(params) {
   var elem = $(this);
   db.get(params.id, function(err, thread) {
     if(err){return location.hash="/error";}
-    getMessagesView(thread._id, function(err, view) {
-      if(err){return location.hash="/error";}
-      var rows = thread.rows = view.rows;
-      for (var i = 0; i < rows.length; i++) {
-        if (rows[i].value[0] == config.email) {
-          rows[i].who = "mine";
-        }
-      };
-      console.log(thread)
-      elem.html(config.t.room(thread));
-      elem.find("form").submit(makeNewMessageSubmit(config.email));
-    });
+    elem.html(config.t.room(thread));
+    elem.find("form").submit(makeNewMessageSubmit(config.email));
+    listMessages(elem.find(".messages"), thread._id);
   });
   return;
   elem.find("a.photo").click(makeNewPhotoClick(user));

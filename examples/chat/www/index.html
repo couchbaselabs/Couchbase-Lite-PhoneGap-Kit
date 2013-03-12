@@ -64,7 +64,10 @@
                 <input type="hidden" name="channel_id" value="{{_id}}"></input>
             </form>
         </header>
-        <section class="thread">
+        <section class="messages">
+        </section>
+        </script>
+        <script type="text/mustache" id="listMessages-mu">
         <ul>
         {{#rows}}
             <li class="{{who}}">
@@ -73,7 +76,7 @@
             </li>
         {{/rows}}
         </ul>
-        </section>
         </script>
+
     </body>
 </html>
