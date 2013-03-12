@@ -47,7 +47,6 @@ $(function() {
         return;
       }
       if (user && user.email) {
-        console.log("we are "+user.email);
         config.email = user.email;
         config.db.put("profile:"+user.email, {type : "profile"}, function() {
           cb(false, user.email);
@@ -63,22 +62,10 @@ $(function() {
     appInit(function(err, email) {
       var contentRouter = router(contentRoutes, content);
       contentRouter.init();
-
-      // setupChanges(function(doc){
-      //   // console.log(["change",location.hash, doc]);
-      //   var currentThread = location.hash.split('/').pop();
-      //   if (doc.type == "message" && doc.thread_id == currentThread) {
-      //     // redraw the chat
-      //     // console.log("chat redraw", currentThread)
-      //     contentRouter.go(location.hash);
-      //   } else if (doc.type == "thread") {
-      //     // redraw the sidebar
-      //     var route = /threads/.test(location.hash) ? location.hash : "/threads";
-      //     sidebarRouter.go(route);
-      //     // get new channels from sync server
-      //     resync();
-      //   }
-      // });
+      setupChanges(function(doc){
+        console.log(["change",location.hash, doc]);
+        config.changesPainter && config.changesPainter();
+      });
     });
   });
 });

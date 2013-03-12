@@ -73,7 +73,7 @@ function makeNewMessageSubmit(email) {
       $(form).find("[name=_rev]").val('');
       return console.log(err);
     }
-    var input = $(form).find("[name=text]");
+    var input = $(form).find("[name=markdown]");
     if (input.val() == doc.markdown) {
       input.val('');
     }
@@ -102,7 +102,10 @@ exports.view = function(params) {
     if(err){return location.hash="/error";}
     elem.html(config.t.room(thread));
     elem.find("form").submit(makeNewMessageSubmit(config.email));
-    listMessages(elem.find(".messages"), thread._id);
+    config.changesPainter = function(){
+      listMessages(elem.find(".messages"), thread._id);
+    };
+    config.changesPainter();
   });
   return;
   elem.find("a.photo").click(makeNewPhotoClick(user));
