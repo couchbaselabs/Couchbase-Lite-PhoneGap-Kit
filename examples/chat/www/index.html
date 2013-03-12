@@ -30,9 +30,11 @@
         <ul>
         {{#rows}}
             <li>
-                <a href="#/room/{{doc._id}}">
-                Room:    {{doc.title}}
-                </a>
+                <a href="#/thread/{{doc._id}}">{{doc.title}}</a>
+                <br/>
+                <span>{{value.1}} messages</span>
+                <br/>
+                <span>latest by {{value.2}}</span>
             </li>
         {{/rows}}
         </ul>
@@ -52,38 +54,26 @@
             </form>
         </article>
         </script>
-        <script type="text/mustache" id="listMessages-mu">
-        <ul data-thread_id="{{thread_id}}">
+        <script type="text/mustache" id="room-mu">
+        <header>
+            <form class="message">
+                <input type="text" name="markdown" placeholder="your message here"></input>
+                <a href="#" class="photo">Photo</a>
+                <input type="hidden" name="_rev"></input>
+                <input type="hidden" name="_id"></input>
+                <input type="hidden" name="channel_id" value="{{_id}}"></input>
+            </form>
+        </header>
+        <section class="thread">
+        <ul>
         {{#rows}}
-            <li>
-            {{#value}}
-                {{author}}:
-                {{text}}
-                {{^text}}
-                ...
-                {{/text}}
-                {{#photo}}
-                    <br/>
-                    <img src="{{path}}" height="200px"/>
-                {{/photo}}
-            {{/value}}
+            <li class="{{who}}">
+                <h4>{{value.0}}</h4>
+                <p>{{value.1}}</p>
             </li>
         {{/rows}}
         </ul>
-        </script>
-        <script type="text/mustache" id="threadMode-mu">
-        <article>
-            <header>
-                <form class="message">
-                    <input type="text" name="text" placeholder="your message here"></input>
-                    <a href="#" class="photo">Photo</a>
-                    <input type="hidden" name="_rev"></input>
-                    <input type="hidden" name="_id"></input>
-                </form>
-            </header>
-            <section class="thread">
-            </section>
-        </article>
+        </section>
         </script>
     </body>
 </html>

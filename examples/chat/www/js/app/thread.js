@@ -3,24 +3,9 @@ var config = require("./config"),
   messagesView = db(["_design","threads","_view","messages"]),
   jsonform = require("./jsonform");
 
-var last_seq = 0;
 function getMessagesView(id, cb) {
-  // console.log(["getMessagesView", id])
-  messagesView([{descending:true,
-      startkey : [id,{}], endkey : [id]}], function(err, view) {
-    if (!err && view.rows[0]) {
-      last_seq = view.rows[0].key[1];
-    }
-    // console.log(["view", view])
-    if (!err) {
-      view.rows.forEach(function(r) {
-        if (r.value.photo) {
-          r.value.path = config.dbUrl+'/'+r.id+"/photo.jpg";
-        }
-      })
-    }
-    cb(err, view)
-  });
+  messagesView([{descending:true, reduce: false,
+      startkey : [id,{}], endkey : [id]}], cb);
 }
 
 function makeNewPhotoClick(user) {
@@ -64,13 +49,12 @@ function makeNewPhotoClick(user) {
     }
 };
 
-function messageFromForm(author_id, form) {
+function messageFromForm(author, form) {
   var doc = jsonform(form);
-  doc.author_id = author_id; // todo rename
+  doc.author = author; // todo rename
   doc.created_at = doc.updated_at = new Date();
-  doc.thread_id = $("section.thread ul").attr("data-thread_id");
-  doc.seq = last_seq++;
-  doc.type = "message";
+  // doc.seq = last_seq++;
+  doc.type = "chat";
   return doc;
 };
 
@@ -112,10 +96,10 @@ return function(e) {
 };
 }
 
-function makeNewMessageSubmit(user) {
+function makeNewMessageSubmit(email) {
   return function(e) {
   e.preventDefault();
-  var form = this, doc = messageFromForm(user.user, form);
+  var form = this, doc = messageFromForm(email, form);
   // emit([doc.thread_id, doc.seq, doc.updated_at], doc.text);
   if (!doc._rev) delete doc._rev;
   if (!doc._id) delete doc._id;
@@ -127,70 +111,36 @@ function makeNewMessageSubmit(user) {
       $(form).find("[name=_rev]").val('');
       return console.log(err);
     }
-    console.log("makeNewMessageSubmit put",ok);
     var input = $(form).find("[name=text]");
     if (input.val() == doc.text) {
       input.val('');
     }
     $(form).find("[name=_id]").val('');
     $(form).find("[name=_rev]").val('');
-    console.log("makeNewMessageSubmit cleared",form);
   });
 }
 }
 
 exports.view = function(params) {
   var elem = $(this);
-  auth.getUser(function(err, user) {
-    if (err) {
-      location.hash = "/reload";
-      return;
-    };
-    // if we aren't in thread mode, go there
-    if (!elem.find('form.message')[0]) {
-      elem.html(config.t.threadMode());
-      elem.find("form").submit(makeNewMessageSubmit(user));
-      // elem.find("form input").on("focus", makeNewMessageBubbles(user));
-      // elem.find("form input").on("focus", function(e){
-      //   var bbls = makeNewMessageBubbles(user);
-      //   bbls.call(elem.find("form"), e)
-      // });
-      // elem.find("form input").on("blur", function(e){
-      //   var bbls = makeMessageBlur(user);
-      //   bbls.call(elem.find("form"), e)
-      // });
-      console.log("bind to photo link")
-      elem.find("a.photo").click(makeNewPhotoClick(user));
-    }
-
-    db.get(params.id, function(err, thread) {
+  db.get(params.id, function(err, thread) {
+    if(err){return location.hash="/error";}
+    getMessagesView(thread._id, function(err, view) {
       if(err){return location.hash="/error";}
-      getMessagesView(thread._id, function(err, view) {
-        if(err){return location.hash="/reload";}
-        thread.rows = view.rows;
-        // console.log(view.rows)
-        $("section.thread").html(config.t.listMessages(thread));
-      });
+      var rows = thread.rows = view.rows;
+      for (var i = 0; i < rows.length; i++) {
+        if (rows[i].value[0] == config.email) {
+          rows[i].who = "mine";
+        }
+      };
+      console.log(thread)
+      elem.html(config.t.room(thread));
+      elem.find("form").submit(makeNewMessageSubmit(config.email));
     });
   });
+  return;
+  elem.find("a.photo").click(makeNewPhotoClick(user));
 };
-
-function drawSidebar(elem, active) {
-
-}
-
-// sidebar
-exports.index = function(params) {
-  var elem = $(this);
-  if (params.id) {
-    db(params.id, function(err, doc){
-      drawSidebar(elem, doc)
-    });
-  } else {
-    drawSidebar(elem)
-  }
-};
-
 
 exports.create = function(params) {
   console.log("new thread", this, params)

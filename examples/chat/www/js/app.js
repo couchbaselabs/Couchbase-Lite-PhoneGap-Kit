@@ -20,11 +20,6 @@ $(function() {
       // "/ready" : home.ready,
       "/threads/new" : thread.create,
       "/thread/:id" : thread.view
-    },
-    sidebar = $("#sidebar")[0],
-    sidebarRoutes = {
-      "/threads" : thread.index,
-      "/thread/:id" : thread.index
     };
 
   var changesSetup = false;
@@ -68,8 +63,6 @@ $(function() {
     appInit(function(err, email) {
       var contentRouter = router(contentRoutes, content);
       contentRouter.init();
-      var sidebarRouter = router(sidebarRoutes, sidebar);
-      sidebarRouter.init("/threads");
 
       // setupChanges(function(doc){
       //   // console.log(["change",location.hash, doc]);

@@ -76,6 +76,10 @@ h2 {
     list-style: none;
 }
 
+li.mine {
+    text-align: right;
+}
+
 .thread li {
     padding: 2px
 }
