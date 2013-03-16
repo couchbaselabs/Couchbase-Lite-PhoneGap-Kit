@@ -4,7 +4,7 @@ var config = require("./config"),
   jsonform = require("./jsonform");
 
 function getMessagesView(id, cb) {
-  messagesView([{descending:true, reduce: false,
+  messagesView([{descending:true, reduce: false, limit:50,
       startkey : [id,{}], endkey : [id]}], cb);
 }
 
