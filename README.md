@@ -1,5 +1,7 @@
 ## 410 Obsolete Repository
 
+## You want [LiteGap for iOS]((https://github.com/couchbaselabs/LiteGap)
+
 # These are not the codes you are looking for
 
 We've made a ton of progress on Couchbase Mobile technologies since this repository was current. You can find the latest code in these Github projects:
