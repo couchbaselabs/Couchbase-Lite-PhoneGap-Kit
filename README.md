@@ -1,6 +1,6 @@
 ## 410 Obsolete Repository
 
-## You want [LiteGap for iOS]((https://github.com/couchbaselabs/LiteGap)
+You want [LiteGap for iOS]((https://github.com/couchbaselabs/LiteGap) and the [wiki article on building a Couchbase Lite PhoneGap container](https://github.com/couchbaselabs/LiteGap/wiki/Building-a-PhoneGap-Couchbase-Lite-Container)
 
 # These are not the codes you are looking for
 
